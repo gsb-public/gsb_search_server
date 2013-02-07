@@ -1,0 +1,12 @@
+name = GSB Search Server
+description = Includes Solr server and Indexes
+core = 7.x
+package = GSB Search
+php = 5.2.4
+version = 7.x-1.0
+project = gsb_search_server
+dependencies[] = entity
+dependencies[] = search_api
+dependencies[] = search_api_solr
+features[features_api][] = api:1
+features[search_api_server][] = solr_server

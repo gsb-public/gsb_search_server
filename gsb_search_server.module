@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the GSB Search Server feature.
+ */
+
+include_once 'gsb_search_server.features.inc';
