@@ -22,3 +22,9 @@ projects[search_api_db][subdir] = contrib
 
 libraries[SolrPhpClient][download][type] = get
 libraries[SolrPhpClient][download][url] = http://solr-php-client.googlecode.com/files/SolrPhpClient.r60.2011-05-04.zip
+
+projects[acquia_connector][version] = 2.8
+projects[acquia_connector][subdir] = contrib
+
+projects[search_api_acquia][version] = 1.0-beta1
+projects[search_api_acquia][subdir] = contrib
