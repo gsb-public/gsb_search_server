@@ -5,3 +5,39 @@
  */
 
 include_once 'gsb_search_server.features.inc';
+
+/**
+ * Implementation of hook_apachesolr_index_document_build_ENTITY_TYPE().
+ *
+ * Adds additional fields for nodes with type GSB Club to solr index.
+ */
+function gsb_search_server_apachesolr_index_document_build_node(ApacheSolrDocument $document, $entity, $env_id) {
+  if ($entity->type == 'gsb_club') {
+    $description = gsb_search_server_get_node_field_value($entity, 'field_club_description');
+    $document->addField('ts_description', $description);
+    $url = $description = gsb_search_server_get_node_field_value($entity, 'field_url');
+    $document->addField('ss_url', $url);
+  }
+}
+
+/**
+ * Return raw value of field with respect to language.
+ *
+ * @param $entity
+ *  entity
+ * @param $field_name
+ *  entity field name
+ * @return mixed
+ *  value of a field
+ */
+function gsb_search_server_get_node_field_value($entity, $field_name) {
+  $field_item = field_get_items('node', $entity, $field_name);
+  if (is_array($field_item)) {
+    $item = array_shift($field_item);
+    $item = $item['value'];
+  }
+  else {
+    $item = "";
+  }
+  return $item;
+}
