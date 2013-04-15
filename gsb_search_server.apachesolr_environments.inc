@@ -16,27 +16,28 @@ function gsb_search_server_apachesolr_environments() {
   $environment->name = 'Acquia Search';
   $environment->url = 'http://search.acquia.com/solr/MZGV-33059';
   $environment->service_class = 'AcquiaSearchService';
-  $environment->conf = array();
+  $environment->conf = array(
+    'apachesolr_read_only' => '0',
+  );
   $environment->index_bundles = array(
     'node' => array(
-      0 => 'business_insight',
-      1 => 'faculty',
-      2 => 'gsb_club',
-      3 => 'gsb_event',
-      4 => 'gsb_media_mention',
-      5 => 'gsb_page',
-      6 => 'gsb_person',
-      7 => 'gsb_school_story',
-      8 => 'gsb_video',
-      9 => 'media_mention',
-      10 => 'msx_fellows',
-      11 => 'news',
-      12 => 'page',
-      13 => 'phd_candidate',
-      14 => 'publication',
-      15 => 'staff',
-      16 => 'student',
-      17 => 'webform',
+      0 => 'alumni',
+      1 => 'business_insight',
+      2 => 'case_study',
+      3 => 'club',
+      4 => 'event',
+      5 => 'faculty',
+      6 => 'gsb_video',
+      7 => 'media_mention',
+      8 => 'msx_fellows',
+      9 => 'news',
+      10 => 'page',
+      11 => 'phd_candidate',
+      12 => 'publication',
+      13 => 'research_paper',
+      14 => 'staff',
+      15 => 'student',
+      16 => 'webform',
     ),
   );
   $export['acquia_search_server_1'] = $environment;

@@ -5,14 +5,13 @@ package = GSB
 php = 5.2.4
 version = 7.x-1.0
 project = gsb_search_server
+dependencies[] = acquia_search
 dependencies[] = apachesolr
-dependencies[] = ctools
 dependencies[] = apachesolr_search
 dependencies[] = apachesolr_views
-dependencies[] = acquia_search
+dependencies[] = ctools
 dependencies[] = entity
-datestamp = 1363876369
+datestamp = 1366043101
 features[apachesolr_environment][] = acquia_search_server_1
 features[ctools][] = apachesolr:apachesolr_environments:1
 features[features_api][] = api:1
-
